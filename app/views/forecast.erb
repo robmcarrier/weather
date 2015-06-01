@@ -1,0 +1,10 @@
+
+    <title><%= @zipcode %>'s Forecast</title>
+    <body>
+        <h2>Forecast for <%= @zipcode %></h2>
+        <% @forcast.each do |forecast| %>
+            <p>
+                <%= "#{forecast}" %>
+            </p>
+        <% end %>
+    </body>
