@@ -1,10 +1,16 @@
 
     <title><%= @zipcode %>'s Forecast</title>
     <body>
-        <h2>Forecast for <%= @zipcode %></h2>
+      <div class="rows">
+        <h1 class="large-4">Forecast for <%= @zipcode %></h1>
+        <div class="large-4 columnns">
+        <ul class="medium-block-grid-5">
         <% @forcast.each do |forecast| %>
-            <p>
-                <%= "#{forecast}" %>
-            </p>
+            <li>
+                <%= "#{forecast[1]}" %>
+            </li>
         <% end %>
+        </ul>
+        </div>
+      </div>
     </body>

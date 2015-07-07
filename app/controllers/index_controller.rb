@@ -2,7 +2,6 @@ require 'sinatra'
 require 'yahoo_weatherman'
 
 get '/' do
-    @message = "hello world"
     erb :index
 end
 
@@ -38,7 +37,7 @@ def get_weather(location)
         else
             dayName = day.strftime('%A')
         end
-        forcast << (dayName + ' is going to be ' + forecast['text'].downcase + ' with a low of ' + ctof(forecast['low']).to_s + ' and a high of ' +  ctof(forecast['high']).to_s)
+        forcast <<  [dayName, forecast['text'].downcase, ctof(forecast['low']).to_s, ctof(forecast['high']).to_s]
     end
 
     forcast
